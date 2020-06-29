@@ -1,0 +1,18 @@
+.main-header {
+  background-color: #05397A;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  border-bottom: solid 2px #426F96;
+  margin-bottom: 20px;
+}
+
+.main-header img {
+  max-width: 240px;
+  width: 100%;
+}
+
+@media(max-width: 768px) {
+  .main-header {
+    margin: 0;
+  }
+}

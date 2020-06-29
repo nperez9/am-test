@@ -1,0 +1,122 @@
+<section class="container-fluid search-hotel-container">
+  <aside class="col-md-3">
+    <div class="filter-container">
+      <div class="row">
+        <div class="col-12 name-box">
+          <h5 class="filter-border">Filtros</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 filter-border">
+          <div class="item-filter-container">
+            <div class="filter-title">
+              <img src="assets/icons/filters/blue-search.svg">  
+              <span> Nombre del Hotel</span>
+              <button class='up-arrow'></button>
+            </div>
+            <div class="name-input">
+              <input 
+                type="text" 
+                (change)="name = $event.target.value" 
+                placeholder="Ingrese el nombre de su hotel"
+              />
+              <button class="btn" (click)='searchHotels()'>Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="item-filter-container">
+            <div class="filter-title ">
+              <span>
+                <img src="assets/icons/filters/blue-star.svg"> Estrellas
+              </span>
+              <button class='up-arrow'></button>
+            </div>
+            <div class="star-input">
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox" [checked]="(stars.length == 0)" (change)="starClean($event)" [disabled]="(stars.length == 0)" name="star-check"
+                    value="0">
+                  <span>Todas las Estrellas</span>
+                </label>
+              </div>
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox" class="starCheck" (change)="starChange($event)" name="star-check" value="5">
+                  <span class="star" *ngFor='let star of counter(5)'>star</span>
+                </label>
+              </div>
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox" class="starCheck" (change)="starChange($event)" name="star-check" value="4">
+                  <span class="star" *ngFor='let star of counter(4)'>star</span>
+                </label>
+              </div>
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox" class="starCheck" (change)="starChange($event)" name="star-check" value="3">
+                  <span class="star" *ngFor='let star of counter(3)'>star</span>
+                </label>
+              </div>
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox" class="starCheck" (change)="starChange($event)" name="star-check" value="2">
+                  <span class="star" *ngFor='let star of counter(2)'>star</span>
+                </label>
+              </div>
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox" class="starCheck" (change)="starChange($event)" name="star-check" value="1">
+                  <span class="star" *ngFor='let star of counter(1)'>star</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="responsive-filter ">
+    Filtrar >
+  </div>
+
+
+  <div class="col-md-9 hotels-container">
+    <article class="hotel-card" *ngFor='let hotel of hotels'>
+      <div class="col-md-4">
+        <img class='hotel-image' src="assets/images/hotels/{{hotel.image}}" alt="{{hotel.name}}" align="middle">
+      </div>
+      <div class="col-md-5">
+        <div>
+          <div class="hotel-name">{{hotel.name}}</div>
+          <div class="star-container">
+            <span class="star" *ngFor='let star of counter(hotel.stars)'>star</span>
+          </div>
+          <div class="amenities-container">
+            <img src="assets/icons/amenities/{{amenitie}}.svg" width="20px" alt="{{amenitie}}" *ngFor='let amenitie of hotel.amenities'>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 price-container">
+        <p>
+          Precio por noche por
+          <br> habitación
+        </p>
+        <div>
+          <span class="hotel-price">
+            ARS
+            <span>{{hotel.price}}</span>
+          </span>
+        </div>
+        <a class="btn hotel-button">
+          Ver hotel
+        </a>
+      </div>
+    </article>
+    <div *ngIf='hotels.length == 0'>
+      <h2>No se encontraron resultados</h2>
+    </div>
+  </div>
+</section>

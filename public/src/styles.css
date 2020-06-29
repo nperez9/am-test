@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.star {
+  fill: #FDBA12!important;
+  color: #FDBA12;
+  display: inline-block;
+  text-indent: -9999px;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  background: url(assets/icons/filters/yellow-star.svg);
+}
+
+body {
+  background-color: #F4F4F4;
+}

@@ -1,0 +1,104 @@
+.filter-container {
+  background-color: white;
+}
+
+.filter-container .name-box > h5 {
+  padding: 15px 25px;
+  margin: 0;
+  
+  vertical-align: middle;
+}
+
+.filter-border {
+  border-bottom: 3px solid #F4F4F4;
+}
+
+.up-arrow {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.item-filter-container {
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.nombre-box {
+  padding: 15px 35px;
+}
+
+.filter-title {
+  color: #157AB1;
+  font-weight: bolder;
+  font-size: 17px;
+}
+
+.filter-title img {
+  width: 17px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.name-input {
+  margin-top: 20px;
+}
+
+.name-input > input {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0;
+}
+
+.name-input > button {
+  background-color: #002C77;
+  color: white;
+  box-shadow: black 1px 1px 0px 1px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-left: 15px;
+}
+
+.star-input {
+  margin-top: 20px;
+}
+
+.star-input label:first-child  {
+  font-weight: bold;
+}
+
+.star-input > div {
+  vertical-align: middle;
+}
+
+.star-input input {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+.star-input span.star {
+  
+}
+
+.responsive-filter {
+  display: none;
+}
+
+@media(max-width: 768px) { 
+  aside {
+    display: none;
+  }
+
+  .responsive-filter {
+    display: block;
+    background: white;
+    padding: 10px;
+    color: #157AB1;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 17px;
+  }
+  
+}
